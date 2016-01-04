@@ -1,0 +1,21 @@
+{
+  "name": "smart_home",
+  "version": "0.0.0",
+  "authors": [
+    "Sameer Singhvi <ssinghvi@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
