@@ -4,6 +4,7 @@ var app = angular.module('SmartHome', ['services'])
 	$scope.data = WeatherFactory.data;
 });
 
+/* Weather Service */
 var services = angular.module('services', []);
 services.factory('WeatherFactory', function($http, $log) {
 	var data = { currentConditions: null };
@@ -25,15 +26,10 @@ services.factory('WeatherFactory', function($http, $log) {
 		}, ws.refreshTime);
 	}
 
-	var roundValue = function(temperature) {
-		return parseFloat(temperature).toFixed(1);
-	}
-
 	var updateCurrentWeather = function() {
 		$log.info('Weather','Updating Current Weather');
 		$http.get(ws.apiBase + ws.apiVersion + '/' + ws.currentEndpoint + '?zip=94044' + '&appid=' + ws.applicationId)
 		.success(function(d) {
-			$log.info('Weather', d);
 			data.currentConditions = d;
 		})
 		.error(function(e) {
